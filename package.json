@@ -1,0 +1,56 @@
+{
+  "name": "ControllerCastr",
+  "version": "1.0.0",
+  "description": "ControllerCastr",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "node-gyp rebuild",
+    "build:win": "electron-builder --win portable",
+    "postbuild": "node setup-addon.js",
+    "clean": "node-gyp clean",
+    "pack": "electron-builder --dir",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "keywords": [
+    "PS5",
+    "Electron",
+    "SDL2"
+  ],
+  "author": "Nendo",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^32.0.1",
+    "electron-builder": "^24.13.3",
+    "electron-rebuild": "^3.2.9",
+    "node-addon-api": "^8.1.0",
+    "node-gyp": "^8.0.0"
+  },
+  "build": {
+    "asar": false,
+    "appId": "dev.nendo.controllercastr",
+    "productName": "ControllerCastr",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "*.js",
+      "assets/*",
+      "index.html"
+    ],
+    "extraFiles": [
+      {
+        "from": "ps5controller/",
+        "to": "resources/app/ps5controller/"
+      }
+    ],
+    "icon": "./assets/icon.ico",
+    "win": {
+      "target": "portable",
+      "icon": "./assets/icon.ico"
+    },
+    "portable": {
+      "artifactName": "${productName}.exe"
+    }
+  }
+}

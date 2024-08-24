@@ -1,0 +1,87 @@
+<html style="overflow: hidden; background: transparent !important;">
+    <head>
+        <style>
+            body {
+                -webkit-app-region: drag;
+                user-select: none;
+            }
+        </style>
+        <link rel="stylesheet" href="assets/style.css">
+        <link rel="stylesheet" href="assets/ps5.css">
+    </head>
+    <body style="overflow: hidden; background: transparent !important;">
+        <div class="controller active ds4 half edit" id="gamepad-0" style="transform-origin: 0px 0px;">
+            
+            <div class="triggers">
+                <span class="trigger left" data-name="button-left-shoulder-bottom" style="opacity: 0;"></span>
+                <span class="trigger right" data-name="button-right-shoulder-bottom" style="opacity: 0;"></span>
+                <span class="trigger-button left" data-name="button-left-shoulder-bottom-digital"></span>
+                <span class="trigger-button right" data-name="button-right-shoulder-bottom-digital"></span>
+                <span class="clear"></span>
+            </div>
+            <div class="bumpers">
+                <span class="bumper left" data-name="button-left-shoulder-top"></span>
+                <span class="bumper right" data-name="button-right-shoulder-top"></span>
+                <span class="clear"></span>
+            </div>
+            <div class="touchpad" data-name="touch-pad"></div>
+            <div class="quadrant p0"></div>
+            <div class="meta pressed" data-name="button-meta"></div>
+            <div class="arrows">
+                <span class="back" data-name="button-select"></span>
+                <span class="start" data-name="button-start"></span>
+                <span class="clear"></span>
+            </div>
+            <div class="abxy">
+                <span class="button a" data-name="button-1"></span>
+                <span class="button b" data-name="button-2"></span>
+                <span class="button x" data-name="button-3"></span>
+                <span class="button y" data-name="button-4"></span>
+            </div>
+            <div class="sticks">
+                <span class="stick left" data-name="stick-1" style="margin-left: 0px; margin-top: 0px; transform: rotateX(0deg) rotateY(0deg);"></span>
+                <span class="stick right" data-name="stick-2" style="margin-left: 0px; margin-top: 0px; transform: rotateX(0deg) rotateY(0deg);"></span>
+            </div>
+            <div class="wheels">
+                <span class="wheel left" data-name="stick-1-wheel" style="transform: rotate(0deg);"></span>
+                <span class="wheel right" data-name="stick-2-wheel" style="transform: rotate(0deg);"></span>
+            </div>
+            <div class="dpad">
+                <span class="face up" data-name="button-dpad-top"></span>
+                <span class="face down" data-name="button-dpad-bottom"></span>
+                <span class="face left" data-name="button-dpad-left"></span>
+                <span class="face right" data-name="button-dpad-right"></span>
+            </div>
+            <div class="fstick" data-name="arcade-stick"></div>
+        </div>
+
+        <script>
+            function scaleContent() {
+                const container = document.querySelector('.controller.ds4');
+                const scaleFactor = window.innerWidth / 1200; // 1200 is the original width of your content
+                container.style.transform = `scale(${scaleFactor})`;
+                container.style.transformOrigin = 'top left';
+            }
+        
+            window.addEventListener('resize', scaleContent);
+            window.addEventListener('load', scaleContent);
+        </script>
+
+        <script>
+            const ipc = window.electronAPI
+        
+        document.addEventListener('keydown', (event) => {
+            if (event.key === '-') {
+                console.log('shrink')
+                ipc.send('resize-window', 'decrease');
+            } else if (event.key === '=') {
+                ipc.send('resize-window', 'increase');
+            }
+        });
+        </script>
+
+        <script src="queue.js"></script>
+        <script src="tester.js"></script>
+        <script src="render.js"></script>
+    </body>
+</html>

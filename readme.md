@@ -10,7 +10,7 @@ Currently only supports PS5 controller on Windows PC. Works in Black Myth: Wukon
 
 ## Usage
 
-1. Download the app and run it
+1. Download the app from [Release](https://github.com/nendonerd/ControllerCastr/releases/tag/v1.0.0) and run it
 2. Drag the app to move it around
 3. Hit "-" to shrink the app, hit "=" to expand the app
 4. Alt+F4 or right click its icon on taskbar to exit
@@ -40,7 +40,7 @@ This project uses the following license: [MIT](link_to_license).
 
 ## 使用方法
 
-1. 下载并运行该应用程序
+1. [下载](https://github.com/nendonerd/ControllerCastr/releases/tag/v1.0.0)并运行该应用程序
 2. 拖动应用程序窗口可以移动位置
 3. 按 "-" 可以缩小窗口，按 "=" 可以放大窗口
 4. 按 Alt+F4 或右键点击任务栏图标退出应用程序

@@ -1,6 +1,8 @@
+[![Demo](https://img.youtube.com/vi/0qWYM3pRHVw/maxresdefault.jpg)](https://youtu.be/0qWYM3pRHVw)
+
 # ControllerCastr
 
-A desktop application that allows you to monitor and display input from a gaming controller in real-time. 
+A desktop application that allows you to monitor and display input from a gaming controller in real-time.
 
 Currently only supports PS5 controller on Windows PC. Works in Black Myth: Wukong, might work in other games as well.
 
@@ -17,16 +19,16 @@ The project use Electron as UI, and use SDL2 to fetch controller data. Because S
 
 ## Why not use gamepadviewer?
 
-gamepadviewer use gamepad api from browser to fetch controller data. It won't work in most 3A games since they have been granted exclusive access to the controller. 
+gamepadviewer use gamepad api from browser to fetch controller data. It won't work in most 3A games since they have been granted exclusive access to the controller.
 
 ## Quirks
+
 1. the app might not stay on top of some games
 2. the app only supports pc now, but you can stream ps5 into pc and use the app as well
 
 ## License
 
-This project uses the following license: [MIT](<link_to_license>).
-
+This project uses the following license: [MIT](link_to_license).
 
 # ControllerCastr
 
@@ -56,4 +58,4 @@ gamepadviewer 使用浏览器中的 gamepad API 来获取手柄数据。在大�
 
 ## 许可证
 
-该项目使用以下许可证：[MIT](<link_to_license>)。
+该项目使用以下许可证：[MIT](link_to_license)。
